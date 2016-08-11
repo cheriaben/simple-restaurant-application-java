@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="672d3a08-4ec9-4b66-8f12-c33bb2b7df2e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from t_inventorymasuk]]>
+	</queryString>
+	<field name="KdBarang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="JumlahMasuk" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TanggalMasuk" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="JumlahMasuk_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{JumlahMasuk}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="137" y="26" width="311" height="28" uuid="c7a8c8ed-b4eb-4621-ae94-0ac57c874151"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PENGELUARAN INVENTORY]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="241" y="7" width="93" height="18" uuid="a9648392-698a-4225-9e7b-36c20900baa0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOOMCHIPZ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="85" y="2" width="100" height="20" uuid="f15e09fa-00d5-42b1-a423-9d4f7fadf1be"/>
+				<text><![CDATA[KdBarang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="259" y="2" width="100" height="20" uuid="ec08c985-58b7-4fc6-9833-5b1cfd838c06"/>
+				<text><![CDATA[JumlahMasuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="2" width="100" height="20" uuid="40290e28-b815-438c-9cf9-f98266b90b4c"/>
+				<text><![CDATA[TanggalMasuk]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="85" y="23" width="100" height="20" uuid="23cbb98e-64c2-4fde-90a3-75dd1407ace6"/>
+				<textFieldExpression><![CDATA[$F{KdBarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="21" width="100" height="20" uuid="05abe614-e6fa-47ec-b132-6a29ff8d14c5"/>
+				<textFieldExpression><![CDATA[$F{JumlahMasuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="22" width="100" height="20" uuid="ab13b3c3-1f31-4289-a08b-0aa135b3c456"/>
+				<textFieldExpression><![CDATA[$F{TanggalMasuk}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="181" height="20" uuid="41ba6b72-d4fd-417a-8385-6d0c97b7a5ce"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

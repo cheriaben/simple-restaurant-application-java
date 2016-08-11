@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report_inventory" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3705e93-cbeb-4803-85ca-863fb39d0389">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select * From t_inventorykeluar]]>
+	</queryString>
+	<field name="KdBarang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="JumlahKeluar" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TanggalKeluar" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="TotalHarga_1" class="java.lang.Integer" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="JumlahKeluar_1" class="java.lang.Integer" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{JumlahKeluar}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="144" y="28" width="311" height="28" uuid="2e355440-f8a7-4dbd-92d5-cd8fe1c74659"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PENGELUARAN INVENTORY]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="246" y="7" width="93" height="18" uuid="2e639f58-76ef-488d-a5f1-7ee3aceeb208"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOOMCHIPZ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="211" y="25" width="181" height="20" uuid="09e12aa9-38fe-4728-9a44-9a6fa170f7da"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jumlah Pengeluaran Inventory]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="25" width="100" height="20" uuid="b5bc2d76-948d-454f-8f19-5139bd26ef11"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal Keluar]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="117" splitType="Stretch">
+			<textField>
+				<reportElement x="239" y="7" width="100" height="20" uuid="dc622d85-7e41-48b0-95b1-55818d3421ac"/>
+				<textFieldExpression><![CDATA[$F{JumlahKeluar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="7" width="100" height="20" uuid="c82538a4-4ccc-4cde-a58c-3463195ce171"/>
+				<textFieldExpression><![CDATA[$F{TanggalKeluar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="119" y="13" width="181" height="20" uuid="37055c92-6e84-4f47-88c4-055e3db911e4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="239" y="13" width="100" height="20" uuid="e6fb9f1d-80e4-4a91-acbc-2224db94c707"/>
+				<textFieldExpression><![CDATA[$V{JumlahKeluar_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

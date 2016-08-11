@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report_acc" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d32cbefe-01b2-4d7c-b82c-c3339055abe2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from t_accident]]>
+	</queryString>
+	<field name="KdAcc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KdPesan" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tanggal/Jam" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IDKaryawan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KdMakanan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Rugi" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="Jumlah_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{Jumlah}]]></variableExpression>
+	</variable>
+	<variable name="Harga_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{Harga}]]></variableExpression>
+	</variable>
+	<variable name="Rugi_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{Rugi}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="211" y="28" width="196" height="28" uuid="ba493ff5-66e5-4efa-809f-6e4312a7f829"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN ACCIDENT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="237" y="6" width="93" height="18" uuid="eeb5031c-197d-49de-8fb5-07b9b9cb1a27"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOOMCHIPZ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="56" height="20" uuid="c7262d83-b13a-4451-98a4-7a5674f6de93"/>
+				<text><![CDATA[KdAcc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="74" y="1" width="89" height="20" uuid="ff11ff57-6be2-43c8-a277-a92e3c27208e"/>
+				<text><![CDATA[Tanggal/Jam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="1" width="81" height="20" uuid="c773ac38-00ea-428c-bc74-2012a9954cdf"/>
+				<text><![CDATA[IDKaryawan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="0" width="85" height="20" uuid="9632f619-4bda-402b-95a5-520768903f3c"/>
+				<text><![CDATA[KdMakanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="0" width="61" height="20" uuid="84c48439-d66b-46d2-8bf3-2766d6f6eb72"/>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="517" y="0" width="32" height="20" uuid="ddcc322d-e6b0-459c-b8e6-1143b185e859"/>
+				<text><![CDATA[Rugi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="454" y="0" width="39" height="20" uuid="8041d305-05b2-4946-a39a-6926e495069f"/>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="56" height="20" uuid="ddd63dee-8e32-4d79-b87c-b70a2cc2fb1d"/>
+				<textFieldExpression><![CDATA[$F{KdAcc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="0" width="89" height="20" uuid="1c497bb6-5813-452b-a179-e867f37aa254"/>
+				<textFieldExpression><![CDATA[$F{Tanggal/Jam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="0" width="81" height="20" uuid="b58e3652-fed1-4528-9652-ad57e756123d"/>
+				<textFieldExpression><![CDATA[$F{IDKaryawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="85" height="20" uuid="37fd3582-7290-43ac-95ab-22f3599c94af"/>
+				<textFieldExpression><![CDATA[$F{KdMakanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="1" width="64" height="20" uuid="2eb4d396-14af-4acf-ba79-3394a6d00053"/>
+				<textFieldExpression><![CDATA[$F{Jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="518" y="1" width="49" height="20" uuid="4d375b00-4681-4661-ab2d-f6c1954b74a2"/>
+				<textFieldExpression><![CDATA[$F{Rugi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="1" width="53" height="20" uuid="62c1af70-6001-4f56-aa3c-82b9a37e1c2a"/>
+				<textFieldExpression><![CDATA[$F{Harga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="181" height="20" uuid="cf12f859-e7df-462e-9142-011a8c711558"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="379" y="0" width="64" height="20" uuid="dfa2fd43-edfe-4bf5-96ea-3310483b9ef1"/>
+				<textFieldExpression><![CDATA[$V{Jumlah_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="50" height="20" uuid="0777559d-0b4b-4638-8b39-2f7873fb4cb9"/>
+				<textFieldExpression><![CDATA[$V{Harga_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="518" y="0" width="49" height="20" uuid="3e375f8d-0c1e-45b4-8d0f-150b3300c5c1"/>
+				<textFieldExpression><![CDATA[$V{Rugi_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

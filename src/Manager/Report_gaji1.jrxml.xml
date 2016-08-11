@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c190228-db1f-49e6-879f-b8cc339623a5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from t_gaji]]>
+	</queryString>
+	<field name="IDKaryawan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="GajiBulanIni" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="197" y="26" width="196" height="28" uuid="dacefdcf-29c1-4adb-9310-c57c6c4b2f72"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN GAJI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="236" y="0" width="93" height="18" uuid="3c2d047b-0f79-462c-98c4-c7c4fa714c1f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOOMCHIPZ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="126" y="2" width="100" height="20" uuid="f27a7e6a-8174-454a-9932-2280ce67f671"/>
+				<text><![CDATA[IDKaryawan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="2" width="100" height="20" uuid="431b81dd-f247-487b-abad-bd8b5a43dcf2"/>
+				<text><![CDATA[GajiBulanIni]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="126" y="63" width="100" height="20" uuid="5a8bdf62-a55c-4b51-88ac-7d85f3dceca2"/>
+				<textFieldExpression><![CDATA[$F{IDKaryawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="63" width="100" height="20" uuid="13f2b499-9a01-4cb9-a5a4-68704f2f3f74"/>
+				<textFieldExpression><![CDATA[$F{GajiBulanIni}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
